@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover" />
+  <meta name="theme-color" content="#101915" />
+  <title>Wildline — Outpost Zero</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main id="game" aria-label="Wildline wilderness shooter">
+    <canvas id="world" aria-label="Game world"></canvas>
+    <div class="vignette"></div>
+    <header class="topbar">
+      <div class="brand"><span class="brand-mark">W</span><div><b>WIL DLINE</b><small>FIELD OPERATIONS</small></div></div>
+      <div class="mission"><span class="live-dot"></span><span id="mission-text">OUTPOST ZERO</span><i>•</i><span id="biome-label">PINEWOOD</span></div>
+      <button id="pause-button" class="icon-button" aria-label="Pause" title="Pause">Ⅱ</button>
+    </header>
+    <section class="left-hud">
+      <div class="status-card"><div class="card-label"><span>VITALS</span><span id="health-value">100</span></div><div class="meter"><div id="health-bar" class="meter-fill health-fill"></div></div><div class="card-label lower"><span>FIELD ARMOR</span><span id="armor-value">65</span></div><div class="meter thin"><div id="armor-bar" class="meter-fill armor-fill"></div></div></div>
+      <div class="objective-card"><span class="eyebrow">DIRECTIVE 01</span><b id="objective">Clear the rogue sentries</b><small id="objective-sub">Neutralize hostiles · 0 / 8</small></div>
+    </section>
+    <section class="right-hud">
+      <div class="map-frame"><div class="map-heading"><span>SECTOR MAP</span><span class="map-coords" id="coords">N 42.08°</span></div><canvas id="minimap" width="168" height="168"></canvas><div class="map-legend"><span><i class="legend-player"></i>YOU</span><span><i class="legend-hostile"></i>HOSTILE</span></div></div>
+      <div class="weapon-card"><div class="weapon-name"><span>MK18</span><small>RANGER CARBINE</small></div><div class="ammo"><strong id="ammo-value">30</strong><span>/ <b id="reserve-value">120</b></span></div><div class="ammo-label">5.56 × 45 MM <span id="reload-label"></span></div></div>
+    </section>
+    <footer class="bottom-hud"><div class="hint"><kbd>W</kbd><kbd>A</kbd><kbd>S</kbd><kbd>D</kbd><span>MOVE</span><i></i><kbd>SHIFT</kbd><span>SPRINT</span></div><div class="center-status"><span class="status-pip"></span><span id="status-text">SIGNAL ACQUIRED</span></div><div class="hint right-hint"><span>AIM</span><i></i><kbd>CLICK</kbd><span>FIRE</span><i></i><kbd>R</kbd><span>RELOAD</span></div></footer>
+    <div id="toast" class="toast"></div>
+    <div id="mobile-controls" class="mobile-controls"><div id="joystick" class="joystick"><div class="joy-ring"></div><div id="joy-knob" class="joy-knob"></div><span>MOVE</span></div><button id="fire-button" class="fire-button"><span>FIRE</span><i>✦</i></button></div>
+    <div id="overlay" class="overlay">
+      <div class="overlay-card">
+        <div class="overline"><span class="live-dot"></span> FIELD REPORT  /  NORTHERN RANGE</div>
+        <h1 id="overlay-title">THE WILD<br><em>IS CALLING.</em></h1>
+        <p id="overlay-copy">A remote outpost has gone dark. Track the rogue sentries through four untamed biomes—and bring the signal back online.</p>
+        <div class="feature-row"><span>✦ &nbsp; OPEN FRONTIER</span><span>✦ &nbsp; WILDLIFE & WATERWAYS</span><span>✦ &nbsp; TACTICAL COMBAT</span></div>
+        <button id="start-button" class="start-button">DEPLOY TO THE WILD <span>→</span></button>
+        <div class="controls-note"><span>WASD / ARROWS <b>MOVE</b></span><i>·</i><span>MOUSE <b>AIM & FIRE</b></span><i>·</i><span>R <b>RELOAD</b></span></div>
+      </div>
+      <div class="overlay-meta"><span>WILDLIFE SAFE ZONE <i>•</i> DEFEND THE FRONTIER</span><span>FIELD UNIT 07 <i>•</i> BUILD 01.08</span></div>
+    </div>
+    <div id="crosshair" class="crosshair"><i></i><i></i><i></i><i></i><b></b></div>
+  </main>
+  <script src="game.js"></script>
+</body>
+</html>
